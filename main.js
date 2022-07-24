@@ -1,4 +1,17 @@
-    var unicodeToChar = function(text) {
+setInterval(()=>{
+    fetch("/fire").then(resp=>resp.text()).then((fireState)=>{
+        if(fireState=="1"){
+            say("FIRE ALARM! FIRE ALARM! FIRE ALARM!")
+        }
+    })
+},750)   
+function say(msg){
+      console.log(msg)
+      var utterance = new SpeechSynthesisUtterance();  
+      utterance.text = msg;
+      window.speechSynthesis.speak(utterance);
+    }
+var unicodeToChar = function(text) {
         return text.replace(/\\u[\dA-F]{4}/gi, function(match) {
                 return String.fromCharCode(parseInt(match.replace(/\\u/g, ''), 16));
             });
@@ -22,12 +35,7 @@
                 fetch(`/${roomBtn.parentNode.getAttribute("data-room")}/${roomBtn.getAttribute("data-btn")}/${+roomBtn.getAttribute("data-active")?"start":"stop"}`)
             })
         })
-      function say(msg){
-      console.log(msg)
-      var utterance = new SpeechSynthesisUtterance();  
-      utterance.text = msg;
-      window.speechSynthesis.speak(utterance);
-    }
+      
     let pump=document.querySelector(`[data-btn="pump"]`)
     if (annyang) {
       // Let's define a command.
