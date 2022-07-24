@@ -1,0 +1,41 @@
+body{margin:0;font-family:sans-serif;}
+        nav{
+            background: purple;
+    color: white;
+    padding: 1em;
+        }
+        h2{
+            margin: 0;
+        }
+        .room{
+            padding: 1em;
+    border: 1px solid purple;
+    margin: 2em 0.5em;
+    border-radius: 10px;
+        }
+        .room-btn{
+            padding: 0.5em;
+    font-size: 1.5em;
+    border: 1px solid purple;
+    border-radius: 10px;
+    transition: all 0.2s;
+        }
+        .room-btn[data-active="1"]{
+    background-color: mediumpurple;
+            transform: scale(0.9);
+        }
+      #mic-btn{
+        position: fixed;
+        bottom: 5px;
+        background-color:white;
+    border: 1px solid purple;
+        right:5px;
+        padding: 0.5em;
+        font-size: 2em;
+    border-radius: 50%;
+    transition: all 0.2s;
+      }
+      #mic-btn[data-active="1"]{
+    background-color: red;
+            transform: scale(0.9);
+        }
